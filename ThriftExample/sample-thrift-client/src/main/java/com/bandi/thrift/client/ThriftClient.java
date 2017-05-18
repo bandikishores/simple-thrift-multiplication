@@ -17,6 +17,10 @@ public class ThriftClient implements multiplicationService.Iface {
 
 	private TTransport transport;
 
+	public static void main(String[] args) throws TTransportException, TException {
+		new ThriftClient().test(new ComplexStruct("abc"));
+	}
+
 	public ThriftClient(String ipAddress, int port) throws TTransportException {
 		super();
 		transport = new TSocket(ipAddress, port);
